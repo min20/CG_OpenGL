@@ -1,4 +1,4 @@
-#include <Windows.h>
+ï»¿#include <Windows.h>
 #include <gl/glut.h>
 
 float xRot = 0.0f;
@@ -7,9 +7,9 @@ float yRot = 0.0f;
 void RenderScene() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	// xRot µµ(angle) ¸¸Å­ xÃà ¹æÇâÀ¸·Î È¸ÀüÇÑ´Ù
+	// xRot ë„(angle) ë§Œí¼ xì¶• ë°©í–¥ìœ¼ë¡œ íšŒì „í•œë‹¤
 	glRotatef(xRot, 1.0f, 0.0f, 0.0f);
-	// yRot µµ(angle) ¸¸Å­ yÃà ¹æÇâÀ¸·Î È¸ÀüÇÑ´Ù
+	// yRot ë„(angle) ë§Œí¼ yì¶• ë°©í–¥ìœ¼ë¡œ íšŒì „í•œë‹¤
 	glRotatef(yRot, 0.0f, 1.0f, 0.0f);
 
 	glBegin(GL_TRIANGLES);
@@ -73,40 +73,40 @@ void ChangeWindowSize(GLsizei w, GLsizei h) {
 void Initialize() {
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
-	// ±âº» Shading Á¤Ã¥ °áÁ¤. °¢°¢ µµÇüº°·Î ¹Ù²Ü ¼öµµ ÀÖ½À´Ï´Ù.
+	// ê¸°ë³¸ Shading ì •ì±… ê²°ì •. ê°ê° ë„í˜•ë³„ë¡œ ë°”ê¿€ ìˆ˜ë„ ìˆìŠµë‹ˆë‹¤.
 	//glShadeModel(GL_FLAT);
 	glShadeModel(GL_SMOOTH);
 
 
-	// ¾Õ¸é(º¸ÀÏ ¸é) ¼³Á¤
+	// ì•ë©´(ë³´ì¼ ë©´) ì„¤ì •
 	glFrontFace(GL_CW);
-	// µŞ¸é(¾È º¸ÀÏ ¸é) ¼³Á¤
+	// ë’·ë©´(ì•ˆ ë³´ì¼ ë©´) ì„¤ì •
 	//glEnable(GL_CULL_FACE);
-	// °¡¸®´Â ¹°Ã¼ ¾È º¸ÀÌ°Ô ÇÔ
+	// ê°€ë¦¬ëŠ” ë¬¼ì²´ ì•ˆ ë³´ì´ê²Œ í•¨
 	glEnable(GL_DEPTH_TEST);
 
-	// ºû ¼ººĞµé
-	GLfloat ambientLight [] = { 0.2f, 0.2f, 0.2f, 1.0f };
-	GLfloat diffuseLight [] = { 0.5f, 0.5f, 0.5f, 1.0f };
-	GLfloat specularLight [] = { 0.5f, 0.5f, 0.5f, 1.0f };
-	// ¹°Ã¼ÀÇ ¹İ»çÀ²
-	GLfloat materialSpecular [] = { 1.0f, 1.0f, 1.0f, 1.0f };
+	// ë¹› ì„±ë¶„ë“¤
+	GLfloat ambientLight[] = { 0.2f, 0.2f, 0.2f, 1.0f };
+	GLfloat diffuseLight[] = { 0.5f, 0.5f, 0.5f, 1.0f };
+	GLfloat specularLight[] = { 0.5f, 0.5f, 0.5f, 1.0f };
+	// ë¬¼ì²´ì˜ ë°˜ì‚¬ìœ¨
+	GLfloat materialSpecular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 
 	glEnable(GL_LIGHTING);
 
-	// ºûÀÇ ¼³Á¤.
+	// ë¹›ì˜ ì„¤ì •.
 	glLightfv(GL_LIGHT0, GL_AMBIENT, ambientLight);
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuseLight);
 	glLightfv(GL_LIGHT0, GL_SPECULAR, specularLight);
 	glEnable(GL_LIGHT0);
 
-	// ÀÌÁ¦ºÎÅÍ ºûÀÌ ¹°°Ç »ö»ó¿¡ ¿µÇâÀ» ÁÙ°Çµ¥
+	// ì´ì œë¶€í„° ë¹›ì´ ë¬¼ê±´ ìƒ‰ìƒì— ì˜í–¥ì„ ì¤„ê±´ë°
 	glEnable(GL_COLOR_MATERIAL);
-	// GL_FRONT = ¾Õ¸é¿¡¸¸, Ambient¿Í Diffuse¸¦ Àû¿ëÇÔ
+	// GL_FRONT = ì•ë©´ì—ë§Œ, Ambientì™€ Diffuseë¥¼ ì ìš©í•¨
 	glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
-	// GL_FRONT = ¾Õ¸é¿¡¸¸, ¹°Ã¼ ¹İ»çÀ²À» materialSpecual·Î Àû¿ëÇÒ°ÅÀÓ.
+	// GL_FRONT = ì•ë©´ì—ë§Œ, ë¬¼ì²´ ë°˜ì‚¬ìœ¨ì„ materialSpecualë¡œ ì ìš©í• ê±°ì„.
 	glMaterialfv(GL_FRONT, GL_SPECULAR, materialSpecular);
-	// GL_SHININESS = specular ±¤ÀÇ nÁ¦°ö ¾ó¸¶·Î ÇÒ°ÇÁö °áÁ¤
+	// GL_SHININESS = specular ê´‘ì˜ nì œê³± ì–¼ë§ˆë¡œ í• ê±´ì§€ ê²°ì •
 	glMateriali(GL_FRONT, GL_SHININESS, 256);
 }
 
@@ -118,7 +118,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR, int) {
 	glutReshapeFunc(ChangeWindowSize);
 
 	Initialize();
-	// glutSpecialFunc ´Â glutMainLoop Àü¿¡ µé¾î°¡¾ß ÇÕ´Ï´Ù!!
+	// glutSpecialFunc ëŠ” glutMainLoop ì „ì— ë“¤ì–´ê°€ì•¼ í•©ë‹ˆë‹¤!!
 	glutSpecialFunc(KeyControl);
 
 	glutMainLoop();

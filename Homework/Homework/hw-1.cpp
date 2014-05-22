@@ -1,4 +1,4 @@
-#include <Windows.h>
+ï»¿#include <Windows.h>
 #include <gl/glut.h>
 
 #define NUM_POINTS 3
@@ -18,22 +18,22 @@ GLfloat window_height;
 void RenderScene() {
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	// ±×¸² ±×¸± »ö»óÀ» ¼±ÅÃÇÕ´Ï´Ù.
+	// ê·¸ë¦¼ ê·¸ë¦´ ìƒ‰ìƒì„ ì„ íƒí•©ë‹ˆë‹¤.
 	glColor3f(0.5f, 0.7f, 1.0f);
-	// glRectfÀÇ ÀÎÀÚ´Â (x1, y1, x2, y2) ÀÔ´Ï´Ù.
-	// (x1, y1), (x2, y2)¸¦ µÎ ²ÀÁöÁ¡À¸·Î ÇÏ´Â Á÷»ç°¢ÇüÀ» ±×¸³´Ï´Ù.
+	// glRectfì˜ ì¸ìëŠ” (x1, y1, x2, y2) ì…ë‹ˆë‹¤.
+	// (x1, y1), (x2, y2)ë¥¼ ë‘ ê¼­ì§€ì ìœ¼ë¡œ í•˜ëŠ” ì§ì‚¬ê°í˜•ì„ ê·¸ë¦½ë‹ˆë‹¤.
 	glRectf(points[0][0], points[0][1], points[0][0] + rsize, points[0][1] + rsize);
 
 	glColor3f(0.9f, 0.4f, 0.4f);
 	glRectf(points[0][0] + 10.0f, points[0][1] + 10.0f, points[0][0] + 10.0f + (rsize - 20.0f), points[0][1] + 10.0f + (rsize - 20.0f));
 	glRectf(points[1][0], points[1][1], points[1][0] + rsize, points[1][1] + rsize);
-	
+
 	glColor3f(0.6f, 0.95f, 0.7f);
 	glRectf(points[1][0] + 10.0f, points[1][1] + 10.0f, points[1][0] + 10.0f + (rsize - 20.0f), points[1][1] + 10.0f + (rsize - 20.0f));
 	glRectf(points[2][0], points[2][1], points[2][0] + rsize, points[2][1] + rsize);
 
 
-	// DisplayMode°¡ DOUBLEÀÌ±â ¶§¹®¿¡ ¹öÆÛ ½º¿ÒÀ» ÇØÁİ´Ï´Ù.
+	// DisplayModeê°€ DOUBLEì´ê¸° ë•Œë¬¸ì— ë²„í¼ ìŠ¤ì™‘ì„ í•´ì¤ë‹ˆë‹¤.
 	glutSwapBuffers();
 }
 
@@ -62,16 +62,16 @@ void TimerFunction(int value) {
 }
 
 void ChangeWindowSize(GLsizei w, GLsizei h) {
-	// glViewport(½ÃÀÛ xÁÂÇ¥, ½ÃÀÛ yÁÂÇ¥, xÅ©±â, yÅ©±â)
+	// glViewport(ì‹œì‘ xì¢Œí‘œ, ì‹œì‘ yì¢Œí‘œ, xí¬ê¸°, yí¬ê¸°)
 	glViewport(0, 0, w, h);
 	//glViewport(0, 0, 300, 300);
 
-	// projectionÀ» ´ã´çÇÏ´Â Çà·ÄÀ» ÇÏ³ª ¸¸µì´Ï´Ù.
+	// projectionì„ ë‹´ë‹¹í•˜ëŠ” í–‰ë ¬ì„ í•˜ë‚˜ ë§Œë“­ë‹ˆë‹¤.
 	glMatrixMode(GL_PROJECTION);
-	// glMatrixMode¿¡¼­ ¸¸µç Çà·ÄÀ» ´ÜÀ§Çà·Ä·Î ÃÊ±âÈ­ ÇÕ´Ï´Ù.
+	// glMatrixModeì—ì„œ ë§Œë“  í–‰ë ¬ì„ ë‹¨ìœ„í–‰ë ¬ë¡œ ì´ˆê¸°í™” í•©ë‹ˆë‹¤.
 	glLoadIdentity();
 
-	// glOrtho´Â View VolumeÀ» (left, right, bottom, top, near, far) ·Î ¼³Á¤.
+	// glOrthoëŠ” View Volumeì„ (left, right, bottom, top, near, far) ë¡œ ì„¤ì •.
 
 
 	if (w <= h) {
@@ -87,7 +87,7 @@ void ChangeWindowSize(GLsizei w, GLsizei h) {
 	}
 
 	glMatrixMode(GL_MODELVIEW);
-	// Çà·Ä º¯È¯ Àü¿¡ ÁÂÇ¥¸¦ Àç¼³Á¤(ÃÊ±âÈ­) ÇÕ´Ï´Ù.
+	// í–‰ë ¬ ë³€í™˜ ì „ì— ì¢Œí‘œë¥¼ ì¬ì„¤ì •(ì´ˆê¸°í™”) í•©ë‹ˆë‹¤.
 	glLoadIdentity();
 
 	glTranslatef(0.0f, 0.0f, 0.0f);
@@ -98,21 +98,21 @@ void Initialize() {
 }
 
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR, int) {
-	// ¹öÆÛ¸¦ µÎ °³ ¸¸µì´Ï´Ù. ÄÃ·¯ ¸ğµ¨Àº RGB
+	// ë²„í¼ë¥¼ ë‘ ê°œ ë§Œë“­ë‹ˆë‹¤. ì»¬ëŸ¬ ëª¨ë¸ì€ RGB
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
-	// »õ Ã¢À» ¸¸µé°í ÀÌ¸§À» Á¤ÇØ¿ä.
-	glutCreateWindow("hw-1-01 ÅÊÅÊ");
+	// ìƒˆ ì°½ì„ ë§Œë“¤ê³  ì´ë¦„ì„ ì •í•´ìš”.
+	glutCreateWindow("hw-1-01 íƒ±íƒ±");
 
-	// ¿ì¸®°¡ ½ÇÁ¦·Î ±×¸² ±×¸± ³ğ(RenderScene)À» ½ÇÇàÇÕ´Ï´Ù(callback function)
+	// ìš°ë¦¬ê°€ ì‹¤ì œë¡œ ê·¸ë¦¼ ê·¸ë¦´ ë†ˆ(RenderScene)ì„ ì‹¤í–‰í•©ë‹ˆë‹¤(callback function)
 	glutDisplayFunc(RenderScene);
-	// Ã¢ Å©±â°¡ º¯°æµÉ °æ¿ì ¸ğ¾çÀ» ¾î¶»°Ô ¹Ù²Ü Áö °áÁ¤ÇÕ´Ï´Ù.
-	// Áö±İÀº ChangeWindowSize¸¦ ½á¿ä.
+	// ì°½ í¬ê¸°ê°€ ë³€ê²½ë  ê²½ìš° ëª¨ì–‘ì„ ì–´ë–»ê²Œ ë°”ê¿€ ì§€ ê²°ì •í•©ë‹ˆë‹¤.
+	// ì§€ê¸ˆì€ ChangeWindowSizeë¥¼ ì¨ìš”.
 	glutReshapeFunc(ChangeWindowSize);
 	glutTimerFunc(1000, TimerFunction, 1);
 
-	// ÃÊ±âÈ­ ÇÔ¼ö ÇÏ³ª ¸¸µé¾ú¾î¿ä.
+	// ì´ˆê¸°í™” í•¨ìˆ˜ í•˜ë‚˜ ë§Œë“¤ì—ˆì–´ìš”.
 	Initialize();
-	// °è¼Ó µ¹¾Æ°¡¸é¼­ À¯ÁöÇØÁÖ°í, ÀÌº¥Æ®µµ ¹Ş¾ÆÁÖ´Â ÇÔ¼öÀÔ´Ï´Ù.
+	// ê³„ì† ëŒì•„ê°€ë©´ì„œ ìœ ì§€í•´ì£¼ê³ , ì´ë²¤íŠ¸ë„ ë°›ì•„ì£¼ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
 	glutMainLoop();
 
 	return 0;

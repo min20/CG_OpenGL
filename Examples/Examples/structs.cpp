@@ -1,4 +1,4 @@
-#include <windows.h>
+癤�#include <windows.h>
 #include <stdlib.h>
 #include <gl/glut.h>
 #include <math.h>
@@ -22,8 +22,6 @@ void RenderScene(void)
 	glPushMatrix();
 	glRotatef(xRot, 1.f, 0.f, 0.f);
 	glRotatef(yRot, 0.f, 1.f, 0.f);
-
-	//원하는 shape를 선택하세요~!
 
 	glutWireTeapot(1.f);
 	glTranslatef(3.0f, 0.0f, 0.0f);

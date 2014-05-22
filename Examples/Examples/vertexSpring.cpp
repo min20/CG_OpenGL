@@ -1,4 +1,4 @@
-#include <Windows.h>
+ï»¿#include <Windows.h>
 #include <gl/glut.h>
 #include <math.h>
 
@@ -19,7 +19,7 @@ void RenderScene() {
 	glColor3f(0.0f, 1.0f, 0.0f);
 
 	for (angle = 0.0f; angle <= (2.0f*GL_PI)*3.0f; angle += 0.1f)
-		// 3.14/0.1 °³ÀÇ Æ÷ÀÎÆ®¸¦ »Ñ¸°´Ù ÃÑ 3¹ÙÄû 
+		// 3.14/0.1 ê°œì˜ í¬ì¸íŠ¸ë¥¼ ë¿Œë¦°ë‹¤ ì´ 3ë°”í€´ 
 	{
 		x = 60.0f*sin(angle);
 		y = 60.0f*cos(angle);
@@ -36,19 +36,19 @@ void KeyControl(int keyboardInput, int x, int y) {
 	if (keyboardInput == GLUT_KEY_UP) {
 		xRot -= 2.0f;
 	}
-	
+
 	if (keyboardInput == GLUT_KEY_DOWN) {
 		xRot += 2.0f;
 	}
-	
+
 	if (keyboardInput == GLUT_KEY_LEFT) {
 		yRot -= 2.0f;
 	}
-	
+
 	if (keyboardInput == GLUT_KEY_RIGHT) {
 		yRot += 2.0f;
 	}
-	
+
 	glutPostRedisplay();
 }
 
@@ -60,7 +60,7 @@ void ChangeWindowSize(GLsizei w, GLsizei h) {
 
 	glViewport(0, 0, w, h);
 
-	// zÃà ¼ººÐº¯È­µµ »ý°Ü¼­ ortho ¹üÀ§¸¦ ´Ã·Á³õ¾Ò´Ù.
+	// zì¶• ì„±ë¶„ë³€í™”ë„ ìƒê²¨ì„œ ortho ë²”ìœ„ë¥¼ ëŠ˜ë ¤ë†“ì•˜ë‹¤.
 	if (w <= h) {
 		glOrtho(-nRange, nRange, -nRange * h / w, nRange * h / w, -nRange, nRange);
 	}
@@ -79,24 +79,24 @@ void Initialize() {
 }
 
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR, int) {
-	// ¹öÆÛ¸¦ µÎ °³ ¸¸µì´Ï´Ù. ÄÃ·¯ ¸ðµ¨Àº RGB
+	// ë²„í¼ë¥¼ ë‘ ê°œ ë§Œë“­ë‹ˆë‹¤. ì»¬ëŸ¬ ëª¨ë¸ì€ RGB
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-	// »õ Ã¢À» ¸¸µé°í ÀÌ¸§À» Á¤ÇØ¿ä.
+	// ìƒˆ ì°½ì„ ë§Œë“¤ê³  ì´ë¦„ì„ ì •í•´ìš”.
 	glutInitWindowPosition(0, 0);
 	glutInitWindowSize(500, 500);
 
 	glutCreateWindow("Vertex Spring");
 
-	// ¿ì¸®°¡ ½ÇÁ¦·Î ±×¸² ±×¸± ³ð(RenderScene)À» ½ÇÇàÇÕ´Ï´Ù(callback function)
+	// ìš°ë¦¬ê°€ ì‹¤ì œë¡œ ê·¸ë¦¼ ê·¸ë¦´ ë†ˆ(RenderScene)ì„ ì‹¤í–‰í•©ë‹ˆë‹¤(callback function)
 	glutDisplayFunc(RenderScene);
-	// Ã¢ Å©±â°¡ º¯°æµÉ °æ¿ì ¸ð¾çÀ» ¾î¶»°Ô ¹Ù²Ü Áö °áÁ¤ÇÕ´Ï´Ù.
-	// Áö±ÝÀº ChangeWindowSize¸¦ ½á¿ä.
+	// ì°½ í¬ê¸°ê°€ ë³€ê²½ë  ê²½ìš° ëª¨ì–‘ì„ ì–´ë–»ê²Œ ë°”ê¿€ ì§€ ê²°ì •í•©ë‹ˆë‹¤.
+	// ì§€ê¸ˆì€ ChangeWindowSizeë¥¼ ì¨ìš”.
 	glutReshapeFunc(ChangeWindowSize);
 	glutSpecialFunc(KeyControl);
 
-	// ÃÊ±âÈ­ ÇÔ¼ö ÇÏ³ª ¸¸µé¾ú¾î¿ä.
+	// ì´ˆê¸°í™” í•¨ìˆ˜ í•˜ë‚˜ ë§Œë“¤ì—ˆì–´ìš”.
 	Initialize();
-	// °è¼Ó µ¹¾Æ°¡¸é¼­ À¯ÁöÇØÁÖ°í, ÀÌº¥Æ®µµ ¹Þ¾ÆÁÖ´Â ÇÔ¼öÀÔ´Ï´Ù.
+	// ê³„ì† ëŒì•„ê°€ë©´ì„œ ìœ ì§€í•´ì£¼ê³ , ì´ë²¤íŠ¸ë„ ë°›ì•„ì£¼ëŠ” í•¨ìˆ˜ìž…ë‹ˆë‹¤.
 	glutMainLoop();
 
 	return 0;

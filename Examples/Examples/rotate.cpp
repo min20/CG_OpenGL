@@ -1,4 +1,4 @@
-#include <Windows.h>
+ï»¿#include <Windows.h>
 #include <gl/glut.h>
 
 float xRot = 0.0f;
@@ -64,7 +64,7 @@ void ChangeWindowSize(GLsizei w, GLsizei h) {
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 
-	// zÃà ¼ººĞº¯È­µµ »ı°Ü¼­ ortho ¹üÀ§¸¦ ´Ã·Á³õ¾Ò´Ù.
+	// zì¶• ì„±ë¶„ë³€í™”ë„ ìƒê²¨ì„œ ortho ë²”ìœ„ë¥¼ ëŠ˜ë ¤ë†“ì•˜ë‹¤.
 	if (w <= h) {
 		glOrtho(-100.0f, 100.0f, -100.0f * h / w, 100.0f * h / w, 100.0f, -100.0f);
 	}
@@ -81,7 +81,7 @@ void ChangeWindowSize(GLsizei w, GLsizei h) {
 void Initialize() {
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
-	// ±âº» Shading Á¤Ã¥ °áÁ¤. °¢°¢ µµÇüº°·Î ¹Ù²Ş´Ù.
+	// ê¸°ë³¸ Shading ì •ì±… ê²°ì •. ê°ê° ë„í˜•ë³„ë¡œ ë°”ê¿ˆë‹¤.
 	//glShadeModel(GL_FLAT);
 	glShadeModel(GL_SMOOTH);
 }
@@ -94,7 +94,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR, int) {
 	glutReshapeFunc(ChangeWindowSize);
 
 	Initialize();
-	// glutSpecialFunc ´Â glutMainLoop Àü¿¡ µé¾î°¡¾ß ÇÕ´Ï´Ù!!
+	// glutSpecialFunc ëŠ” glutMainLoop ì „ì— ë“¤ì–´ê°€ì•¼ í•©ë‹ˆë‹¤!!
 	glutSpecialFunc(KeyControl);
 
 	glutMainLoop();

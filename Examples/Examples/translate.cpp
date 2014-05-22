@@ -1,10 +1,10 @@
-#include <Windows.h>
+ï»¿#include <Windows.h>
 #include <gl/glut.h>
 
 void RenderScene() {
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	// glTranslatef·Î À§Ä¡¸¦ º¯°æÇÏ°í
+	// glTranslatefë¡œ ìœ„ì¹˜ë¥¼ ë³€ê²½í•˜ê³ 
 	glTranslatef(-10.0f, 10.0f, 0.0f);
 	glShadeModel(GL_FLAT);
 	glBegin(GL_TRIANGLES);
@@ -17,7 +17,7 @@ void RenderScene() {
 	glColor3f(0.6f, 0.95f, 0.7f);
 	glVertex2f(50.0f, 5.0f);
 	glEnd();
-	// glLoadIdentity·Î ´Ù½Ã ÃÊ±âÈ­ÇÑ´Ù.
+	// glLoadIdentityë¡œ ë‹¤ì‹œ ì´ˆê¸°í™”í•œë‹¤.
 	glLoadIdentity();
 
 	glTranslatef(10.0f, -10.0f, 0.0f);
@@ -59,7 +59,7 @@ void ChangeWindowSize(GLsizei w, GLsizei h) {
 void Initialize() {
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
-	// ±âº» Shading Á¤Ã¥ °áÁ¤. °¢°¢ µµÇüº°·Î ¹Ù²Ş´Ù.
+	// ê¸°ë³¸ Shading ì •ì±… ê²°ì •. ê°ê° ë„í˜•ë³„ë¡œ ë°”ê¿ˆë‹¤.
 	//glShadeModel(GL_FLAT);
 	glShadeModel(GL_SMOOTH);
 }

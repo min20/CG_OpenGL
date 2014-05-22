@@ -1,4 +1,4 @@
-#include <Windows.h>
+ï»¿#include <Windows.h>
 #include <gl/glut.h>
 
 float xRot = 0.0f;
@@ -7,9 +7,9 @@ float yRot = 0.0f;
 void RenderScene() {
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	// xRot µµ(angle) ¸¸Å­ xÃà ¹æÇâÀ¸·Î È¸ÀüÇÑ´Ù
+	// xRot ë„(angle) ë§Œí¼ xì¶• ë°©í–¥ìœ¼ë¡œ íšŒì „í•œë‹¤
 	glRotatef(xRot, 1.0f, 0.0f, 0.0f);
-	// yRot µµ(angle) ¸¸Å­ yÃà ¹æÇâÀ¸·Î È¸ÀüÇÑ´Ù
+	// yRot ë„(angle) ë§Œí¼ yì¶• ë°©í–¥ìœ¼ë¡œ íšŒì „í•œë‹¤
 	glRotatef(yRot, 0.0f, 1.0f, 0.0f);
 
 	glShadeModel(GL_FLAT);
@@ -82,12 +82,12 @@ void ChangeWindowSize(GLsizei w, GLsizei h) {
 void Initialize() {
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
-	// ±âº» Shading Á¤Ã¥ °áÁ¤. °¢°¢ µµÇüº°·Î ¹Ù²Ş´Ù.
+	// ê¸°ë³¸ Shading ì •ì±… ê²°ì •. ê°ê° ë„í˜•ë³„ë¡œ ë°”ê¿ˆë‹¤.
 	//glShadeModel(GL_FLAT);
 	glShadeModel(GL_SMOOTH);
 
 
-	// ¾Õ¸é(º¸ÀÏ ¸é) ¼³Á¤, Àº¸é Á¦°Å ÄÑ±â
+	// ì•ë©´(ë³´ì¼ ë©´) ì„¤ì •, ì€ë©´ ì œê±° ì¼œê¸°
 	glFrontFace(GL_CCW);
 	glEnable(GL_CULL_FACE);
 }
@@ -100,7 +100,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR, int) {
 	glutReshapeFunc(ChangeWindowSize);
 
 	Initialize();
-	// glutSpecialFunc ´Â glutMainLoop Àü¿¡ µé¾î°¡¾ß ÇÕ´Ï´Ù!!
+	// glutSpecialFunc ëŠ” glutMainLoop ì „ì— ë“¤ì–´ê°€ì•¼ í•©ë‹ˆë‹¤!!
 	glutSpecialFunc(KeyControl);
 
 	glutMainLoop();

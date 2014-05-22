@@ -1,23 +1,23 @@
-#include <Windows.h>
+ï»¿#include <Windows.h>
 #include <gl/glut.h>
 
 void RenderScene() {
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	// Flat ShadingÀ¸·Î ¸¸µç »ï°¢Çü
+	// Flat Shadingìœ¼ë¡œ ë§Œë“  ì‚¼ê°í˜•
 	glShadeModel(GL_FLAT);
 	glBegin(GL_TRIANGLES);
 	glColor3f(0.5f, 0.7f, 1.0f);
 	glVertex2f(-50.0f, 5.0f);
-	
+
 	glColor3f(0.9f, 0.4f, 0.4f);
 	glVertex2f(0.0f, 80.0f);
-	
+
 	glColor3f(0.6f, 0.95f, 0.7f);
 	glVertex2f(50.0f, 5.0f);
 	glEnd();
 
-	// Smooth Shading(±×·Î¿ì)À¸·Î ¸¸µç »ï°¢Çü
+	// Smooth Shading(ê·¸ë¡œìš°)ìœ¼ë¡œ ë§Œë“  ì‚¼ê°í˜•
 	glShadeModel(GL_SMOOTH);
 	glBegin(GL_TRIANGLES);
 	glColor3f(0.5f, 0.7f, 1.0f);
@@ -34,7 +34,7 @@ void RenderScene() {
 }
 
 void ChangeWindowSize(GLsizei w, GLsizei h) {
-	// ***ÇöÀç viewPort Å©±â°¡ 1/2·Î Á¶ÀıµÇ¾îÀÖ´Ù.
+	// ***í˜„ì¬ viewPort í¬ê¸°ê°€ 1/2ë¡œ ì¡°ì ˆë˜ì–´ìˆë‹¤.
 	glViewport(0.25*w, 0.25*h, 0.5*w, 0.5*h);
 
 	glMatrixMode(GL_PROJECTION);
@@ -56,7 +56,7 @@ void ChangeWindowSize(GLsizei w, GLsizei h) {
 void Initialize() {
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
-	// ±âº» Shading Á¤Ã¥ °áÁ¤. °¢°¢ µµÇüº°·Î ¹Ù²Ş´Ù.
+	// ê¸°ë³¸ Shading ì •ì±… ê²°ì •. ê°ê° ë„í˜•ë³„ë¡œ ë°”ê¿ˆë‹¤.
 	//glShadeModel(GL_FLAT);
 	glShadeModel(GL_SMOOTH);
 }
