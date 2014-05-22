@@ -45,7 +45,10 @@
     <ClCompile Include="vertexSpring.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cullingCorn.cpp">
+    <ClCompile Include="cullingCone.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="atom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
