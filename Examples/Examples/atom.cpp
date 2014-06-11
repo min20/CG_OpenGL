@@ -1,4 +1,4 @@
-#include <gl/glut.h>
+ï»¿#include <gl/glut.h>
 #include <windows.h>
 #include <math.h>
 
@@ -35,51 +35,51 @@ void RenderScene()
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	glTranslatef(0.0f, 0.0f, -100.0f);  // z ÃàÀ¸·Î -100¸¸Å­ ÀÌµ¿
+	glTranslatef(0.0f, 0.0f, -100.0f);  // z ÃƒÃ Ã€Â¸Â·ÃŽ -100Â¸Â¸Ã…Â­ Ã€ÃŒÂµÂ¿
 
 	glColor3ub(255, 0,0);
 	glutSolidSphere(10.0f,15,15);
-	glPushMatrix();						// viewing transformation ÀúÀå (1) 
-										// (1) - zÃàÀ¸·Î -100¸¸Å­ ÀÌµ¿		
+	glPushMatrix();						// viewing transformation Ã€ÃºÃ€Ã¥ (1) 
+										// (1) - zÃƒÃ Ã€Â¸Â·ÃŽ -100Â¸Â¸Ã…Â­ Ã€ÃŒÂµÂ¿		
 	
 	GLfloat position = 90.0f;
 	glRotatef(fElect1, 0.0f, 1.0f, 0.0f);
-	glTranslatef(position,0.0f, 0.0f);      // º¯È¯µÈ xÃàÀ¸·Î 90¸¸Å­ ÀÌµ¿
+	glTranslatef(position,0.0f, 0.0f);      // ÂºÂ¯ÃˆÂ¯ÂµÃˆ xÃƒÃ Ã€Â¸Â·ÃŽ 90Â¸Â¸Ã…Â­ Ã€ÃŒÂµÂ¿
 	glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
-	glRotatef(fElect2, 0.0f, 1.0f, 0.0f); // yÃà ¹æÇâÀ¸·Î fElect1 °¢¸¸Å­ È¸Àü
+	glRotatef(fElect2, 0.0f, 1.0f, 0.0f); // yÃƒÃ  Â¹Ã¦Ã‡Ã¢Ã€Â¸Â·ÃŽ fElect1 Â°Â¢Â¸Â¸Ã…Â­ ÃˆÂ¸Ã€Ã¼
 	glTranslatef(0.0f, 0.0f, -20.0f);
 	glColor3ub(255, 255, 255);
 	glutSolidSphere(3.0f, 15, 15);
-	glPopMatrix();						// STACK¿¡ ÀúÀåµÈ (1) ÀÇ »óÅÂ·Î º¯È¯Çà·Ä Àç¼³Á¤
+	glPopMatrix();						// STACKÂ¿Â¡ Ã€ÃºÃ€Ã¥ÂµÃˆ (1) Ã€Ã‡ Â»Ã³Ã…Ã‚Â·ÃŽ ÂºÂ¯ÃˆÂ¯Ã‡Ã Â·Ã„ Ã€Ã§Â¼Â³ÃÂ¤
 	
 	glPushMatrix();
 	glRotatef(fElect1, 0.0f, 1.0f, 0.0f);
 	glTranslatef(position, 0.0f, 0.0f);
 	glColor3ub(255,255,0);
-	glutSolidSphere(6.0f,15,15);        // ¿ø ±×¸®±â
+	glutSolidSphere(6.0f,15,15);        // Â¿Ã¸ Â±Ã—Â¸Â®Â±Ã¢
 	glPopMatrix();
-										// (1) - zÃàÀ¸·Î -100¸¸Å­ ÀÌµ¿		
+										// (1) - zÃƒÃ Ã€Â¸Â·ÃŽ -100Â¸Â¸Ã…Â­ Ã€ÃŒÂµÂ¿		
 
-	// µÎ¹øÂ° ¿øÀÚ ±×¸®±â
-	glPushMatrix();						// viewing transformation ÀúÀå (1) 				
+	// ÂµÃŽÂ¹Ã¸Ã‚Â° Â¿Ã¸Ã€Ãš Â±Ã—Â¸Â®Â±Ã¢
+	glPushMatrix();						// viewing transformation Ã€ÃºÃ€Ã¥ (1) 				
 	glRotatef(45.0f, 0.0f,0.0f, 1.0f);  
 	glRotatef(fElect1, 0.0f,1.0f,0.0f);
 	glTranslatef(-70.0f, 0.0f,0.0f);
 	glutSolidSphere(6.0f,15,15);
-	glPopMatrix();						// STACK¿¡ ÀúÀåµÈ (1) ÀÇ »óÅÂ·Î º¯È¯Çà·Ä Àç¼³Á¤
-										// (1) - zÃàÀ¸·Î -100¸¸Å­ ÀÌµ¿		
+	glPopMatrix();						// STACKÂ¿Â¡ Ã€ÃºÃ€Ã¥ÂµÃˆ (1) Ã€Ã‡ Â»Ã³Ã…Ã‚Â·ÃŽ ÂºÂ¯ÃˆÂ¯Ã‡Ã Â·Ã„ Ã€Ã§Â¼Â³ÃÂ¤
+										// (1) - zÃƒÃ Ã€Â¸Â·ÃŽ -100Â¸Â¸Ã…Â­ Ã€ÃŒÂµÂ¿		
 
 
-	glPushMatrix();                     // viewing transformation ÀúÀå (1) 	
+	glPushMatrix();                     // viewing transformation Ã€ÃºÃ€Ã¥ (1) 	
 	glRotatef(90.0f,0.0f, 0.0f, 1.0f);
-	glRotatef(fElect1, 0.0f, 1.0f, 0.0f);// º¯È¯µÈ zÃàÀ¸·Î 90¸¸Å­ ÀÌµ¿
+	glRotatef(fElect1, 0.0f, 1.0f, 0.0f);// ÂºÂ¯ÃˆÂ¯ÂµÃˆ zÃƒÃ Ã€Â¸Â·ÃŽ 90Â¸Â¸Ã…Â­ Ã€ÃŒÂµÂ¿
 	glTranslatef(0.0f, 0.0f, 60.0f);
 	glutSolidSphere(6.0f, 15, 15);
-	glPopMatrix();						// STACK¿¡ ÀúÀåµÈ (1) ÀÇ »óÅÂ·Î º¯È¯Çà·Ä Àç¼³Á¤
-										// (1) - zÃàÀ¸·Î -100¸¸Å­ ÀÌµ¿		
+	glPopMatrix();						// STACKÂ¿Â¡ Ã€ÃºÃ€Ã¥ÂµÃˆ (1) Ã€Ã‡ Â»Ã³Ã…Ã‚Â·ÃŽ ÂºÂ¯ÃˆÂ¯Ã‡Ã Â·Ã„ Ã€Ã§Â¼Â³ÃÂ¤
+										// (1) - zÃƒÃ Ã€Â¸Â·ÃŽ -100Â¸Â¸Ã…Â­ Ã€ÃŒÂµÂ¿		
 
 
-	fElect1 += 3.0f;					// È¸Àü°¢ Áõ°¡
+	fElect1 += 3.0f;					// ÃˆÂ¸Ã€Ã¼Â°Â¢ ÃÃµÂ°Â¡
 	if(fElect1 > 360.0f)
 		fElect1 = 0.0f;
 

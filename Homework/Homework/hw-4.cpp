@@ -12,6 +12,8 @@ void SetupRC() {
 	glEnable(GL_DEPTH_TEST);	// Hidden surface removal
 	glFrontFace(GL_CCW);		// Counter clock-wise polygons face out
 	glEnable(GL_CULL_FACE);		// Do not calculate inside of jet
+
+	//glEnable(GL_LIGHTING);
 }
 
 void TimerFunc(int value) {
@@ -38,6 +40,7 @@ void RenderScene() {
 	glPushMatrix();
 	glRotatef(fElect1, 0.0f, 1.0f, 0.0f);
 	glTranslatef(90.0f, 0.0f, 0.0f);
+	glRotatef(-fElect1, 0.0f, 1.0f, 0.0f);
 	glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
 	glRotatef(fElect2, 0.0f, 1.0f, 0.0f);
 	glTranslatef(0.0f, 0.0f, 30.0f);
@@ -107,7 +110,7 @@ void ContorolKey(int key, int x, int y) {
 }
 
 void ChangeSize(int w, int h) {
-	GLfloat nRange = 130.0f;
+	GLfloat nRange = 120.0f;
 
 	glViewport(0, 0, w, h);
 	glMatrixMode(GL_PROJECTION);
