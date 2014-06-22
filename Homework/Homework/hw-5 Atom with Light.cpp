@@ -6,13 +6,10 @@
 
 void SetupRC() {
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-	glEnable(GL_DEPTH_TEST);	// Hidden surface removal
-	glFrontFace(GL_CCW);		// Counter clock-wise polygons face out
-	glEnable(GL_CULL_FACE);		// Do not calculate inside of jet
+	glEnable(GL_DEPTH_TEST);
+	glFrontFace(GL_CCW);
+	glEnable(GL_CULL_FACE);
 
-	//glEnable(GL_LIGHTING);
-
-	//ambientLight, diffuseLight, sepcularLight를 위한 값을 설정한다.
 	GLfloat ambientLight[] = { 0.3f, 0.3f, 0.3f, 1.0f };
 	GLfloat diffuseLight[] = { 0.7f, 0.7f, 0.7f, 1.0f };
 	GLfloat specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
@@ -21,7 +18,6 @@ void SetupRC() {
 
 	glEnable(GL_LIGHTING);
 
-	//light 설정
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientLight);
 	glLightfv(GL_LIGHT0, GL_AMBIENT, ambientLight);
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuseLight);
