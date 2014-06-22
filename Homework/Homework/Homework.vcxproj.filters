@@ -15,16 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="hw-1.cpp">
+    <ClCompile Include="hw-1 MovingRects.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hw-2.cpp">
+    <ClCompile Include="hw-3 RainbowBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hw-4.cpp">
+    <ClCompile Include="hw-4 Atom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hw-3.cpp">
+    <ClCompile Include="hw-5 Atom with Light.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hw-2 Helix with Vertexes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
